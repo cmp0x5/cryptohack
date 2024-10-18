@@ -20,6 +20,9 @@ for i in ints
     mod = powermod(i, exp, p)
     
     if mod == 1
-        println("$i is a quadratic residue")
+		y = i
+		e = (p + 1) ÷ 4
+		res = powermod(y, e, p)
+		println(res)
     end
 end
