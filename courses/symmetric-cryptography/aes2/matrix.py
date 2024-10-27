@@ -5,8 +5,8 @@ def bytes2matrix(text):
 def matrix2bytes(matrix):
     """ Converts a 4x4 matrix into a 16-byte array.  """
     res = ""
-    for i in range(4):
-        for j in range(4):
+    for i in range(len(matrix)):
+        for j in range(len(matrix[0])):
             res += chr(matrix[i][j])
     return res
 

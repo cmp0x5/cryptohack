@@ -14,8 +14,19 @@ round_key = [
 
 
 def add_round_key(s, k):
-    ???
+    ans = state
+    for i in range(len(s)):
+        for j in range(len(s[0])):
+            ans[i][j] = state[i][j] ^ round_key[i][j]
+    return ans
 
+def matrix2bytes(matrix):
+    res = ""
+    for i in range(len(matrix)):
+        for j in range(len(matrix[0])):
+            res += chr(matrix[i][j])
+    return res
 
-print(add_round_key(state, round_key))
+plain = add_round_key(state, round_key)
+print(matrix2bytes(plain))
 
