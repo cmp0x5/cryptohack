@@ -5,7 +5,9 @@ def shift_rows(s):
 
 
 def inv_shift_rows(s):
-    ???
+    s[1][1], s[2][1], s[3][1], s[0][1] = s[0][1], s[1][1], s[2][1], s[3][1]
+    s[2][2], s[3][2], s[0][2], s[1][2] = s[0][2], s[1][2], s[2][2], s[3][2]
+    s[3][3], s[0][3], s[1][3], s[2][3] = s[0][3], s[1][3], s[2][3], s[3][3]
 
 
 # learned from http://cs.ucsb.edu/~koc/cs178/projects/JT/aes.c
@@ -47,3 +49,13 @@ state = [
     [94, 79, 8, 54],
 ]
 
+def matrix2bytes(matrix):
+    res = ""
+    for i in range(len(matrix)):
+        for j in range(len(matrix[0])):
+            res += chr(matrix[i][j])
+    return res
+
+inv_mix_columns(state)
+inv_shift_rows(state)
+print(matrix2bytes(state))
