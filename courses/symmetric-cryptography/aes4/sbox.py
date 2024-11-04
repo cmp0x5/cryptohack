@@ -44,14 +44,11 @@ state = [
 ]
 
 
-def sub_bytes(s, sbox=s_box):
+def sub_bytes(s, sbox):
     ans = ""
     for i in range(len(s)):
         for j in range(len(s[i])):
             current_number = state[i][j]
-            # not a matrix nvm
-            #sboxLine = current_number // 16
-            #sboxRow = current_number % 16
             ans += chr(sbox[current_number])
     return ans
 
