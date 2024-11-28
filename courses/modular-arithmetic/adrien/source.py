@@ -20,4 +20,5 @@ def encrypt_flag(flag):
     return ciphertext
 
 cipher = encrypt_flag(FLAG)
-print(cipher)
+#print(cipher)
+print(len(FLAG))

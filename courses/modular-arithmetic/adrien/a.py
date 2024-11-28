@@ -12,7 +12,7 @@ for bit in cipher:
         flag += "1"
     else:
         flag += "0"
-
+print(len(cipher))
 print(flag)
 flag_hex = hex(int(flag, 2))[2:] # convert to hex string, strip 0x prefix
 flag_bytes = bytes.fromhex(flag_hex)
